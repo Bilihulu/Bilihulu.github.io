@@ -104,6 +104,7 @@ a{color:inherit;text-decoration:none}
 }
 .card-art.shanhai{background:linear-gradient(150deg,#2a454a,#172e34)}
 .card-art.qingyun{background:linear-gradient(150deg,#324a52,#15252b)}
+.card-art.arrows{background:linear-gradient(150deg,#3a3550,#1d1a2e)}
 .art-emoji{font:bold 56px Georgia,serif;color:var(--gold);text-shadow:3px 3px 0 var(--ink-hard)}
 .ribbon{
   position:absolute;top:10px;left:-30px;transform:rotate(-45deg);
