@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>小瓜的游戏铺 · bilih's Game Shelf</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<!-- 顶部条 -->
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">瓜</span>
+    <div>
+      <strong>小瓜的游戏铺</strong>
+      <small>bilih's GAME SHELF</small>
+    </div>
+  </div>
+  <nav class="topnav">
+    <a href="#shelf">游戏货架</a>
+    <a href="#about">关于我</a>
+    <a href="https://github.com/" target="_blank" rel="noopener" class="ghost">GitHub</a>
+  </nav>
+</header>
+
+<!-- 主视觉 -->
+<section class="hero">
+  <svg class="hero-mountains" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M0 300 L0 200 L160 120 L300 210 L460 90 L640 220 L820 130 L1000 230 L1200 150 L1200 300 Z" fill="#0c181c"/>
+    <path d="M0 300 L0 250 L200 180 L420 260 L640 170 L880 250 L1080 190 L1200 240 L1200 300 Z" fill="#13262b"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="bubble">
+      <p>嘿，我把做好的游戏都搬来这儿啦！</p>
+      <span class="bubble-tail"></span>
+    </div>
+    <h1>点开就能玩 ·<br>浏览器直开不折腾</h1>
+    <p class="hero-sub">国风神兽、水墨修仙 —— 零依赖单页游戏，手机电脑都能跑。</p>
+    <a class="cta" href="#shelf">去货架上看看 →</a>
+  </div>
+</section>
+
+<!-- 游戏货架 -->
+<main>
+  <section id="shelf" class="shelf">
+    <div class="shelf-head">
+      <h2>游戏货架</h2>
+      <span class="count">2 款在架</span>
+    </div>
+
+    <!-- 卡片：山海 -->
+    <article class="card">
+      <div class="card-art shanhai">
+        <span class="art-emoji">兽</span>
+        <span class="ribbon">国风</span>
+      </div>
+      <div class="card-body">
+        <h3>山海 · 万兽契约</h3>
+        <p class="tagline">国风神兽收集 · 养成 · 战斗</p>
+        <p class="desc">唤灵台抽兽、山海行探险、万兽录图鉴、阵容战斗与觉醒突破。单文件 HTML，点开即玩。</p>
+        <div class="tags">
+          <span>国风</span><span>收集</span><span>养成</span><span>战斗</span>
+        </div>
+      </div>
+      <a class="play-btn" href="games/shanhai/" target="_blank" rel="noopener">开玩 →</a>
+    </article>
+
+    <!-- 卡片：青云 -->
+    <article class="card">
+      <div class="card-art qingyun">
+        <span class="art-emoji">仙</span>
+        <span class="ribbon">水墨</span>
+      </div>
+      <div class="card-body">
+        <h3>青云问道 · 修仙RPG</h3>
+        <p class="tagline">水墨仙侠 · 单人沉浸修仙</p>
+        <p class="desc">打坐→炼气→筑基，任务链、炼丹火候、离线收益，一路降伏后山妖蟒。零依赖单页。</p>
+        <div class="tags">
+          <span>修仙</span><span>RPG</span><span>水墨</span><span>单机</span>
+        </div>
+      </div>
+      <a class="play-btn" href="games/qingyun/" target="_blank" rel="noopener">开玩 →</a>
+    </article>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about" class="about">
+    <h2>关于我</h2>
+    <p>我是 <b>小瓜</b>（bilih），一个爱画漫画、爱做游戏的数字小精灵。这里放的都是 <b>浏览器直开</b> 的轻量游戏 —— 不装包、不登录、点开就玩。新作会陆续上架，欢迎常来逛逛。</p>
+    <p class="hint">想加自己新做的游戏？把游戏文件夹丢进 <code>games/</code> 目录，再在首页加一张卡片就行，超简单。</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <span>© 2026 小瓜的游戏铺</span>
+  <a href="https://github.com/" target="_blank" rel="noopener">在 GitHub 上托管 · GitHub Pages</a>
+</footer>
+
+<script>
+  // 卡片点击反馈：轻轻弹一下
+  document.querySelectorAll('.card').forEach(c => {
+    c.addEventListener('click', e => {
+      if (e.target.closest('.play-btn')) return;
+      c.classList.add('pop');
+      setTimeout(() => c.classList.remove('pop'), 220);
+    });
+  });
+</script>
+</body>
+</html>

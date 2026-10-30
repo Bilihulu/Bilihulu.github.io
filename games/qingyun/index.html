@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>青云问道 · 修仙RPG</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- 首屏：进入仙途（用户手势，用于初始化音频） -->
+<div id="title-screen">
+  <div class="title-inner">
+    <div class="title-mountains" id="title-art"></div>
+    <h1 class="title-name">青云问道</h1>
+    <p class="title-sub">水墨仙侠 · 单人沉浸修仙RPG</p>
+    <p class="title-desc">修炼 · 突破 · 历练 · 炼丹 —— 从凡人之躯走到筑基，降伏后山妖蟒</p>
+    <div class="title-btns">
+      <button class="btn btn-gold btn-big" id="btn-enter">进入仙途</button>
+      <button class="btn btn-big hidden" id="btn-continue">继续仙途</button>
+    </div>
+    <p class="title-tip">首次点击将启用背景音乐与音效，可在设置中随时调整</p>
+  </div>
+</div>
+
+<!-- 游戏主体 -->
+<div id="game" class="hidden">
+  <header id="topbar">
+    <div class="tb-left">
+      <span class="tb-dao" id="tb-name">—</span>
+      <span class="tb-realm" id="tb-realm">凡人</span>
+    </div>
+    <div class="tb-mid">
+      <div class="tb-exp" id="tb-exp" title="修为">
+        <i id="tb-exp-fill"></i>
+        <span id="tb-exp-text">修为 0/0</span>
+      </div>
+      <div class="tb-hp" title="生命"><i id="tb-hp-fill"></i><span id="tb-hp-text">0/0</span></div>
+      <div class="tb-mp" title="灵力"><i id="tb-mp-fill"></i><span id="tb-mp-text">0/0</span></div>
+    </div>
+    <div class="tb-right">
+      <span class="tb-res" id="tb-stones">灵石 0</span>
+      <button class="tb-btn" data-action="open-status" title="人物状态">状态</button>
+      <button class="tb-btn mobile-only" data-action="open-quests" title="仙途历程">任务</button>
+      <button class="tb-btn mobile-only" data-action="open-log" title="仙途见闻">日志</button>
+      <button class="tb-btn" data-action="open-bag" title="背包">背包</button>
+      <button class="tb-btn" data-action="open-settings" title="设置">设置</button>
+    </div>
+  </header>
+
+  <div id="layout">
+    <nav id="sidenav">
+      <button class="nav-btn" data-mode="cave"><span class="nav-ico">穴</span>洞府</button>
+      <button class="nav-btn" data-mode="cultivate"><span class="nav-ico">修</span>修炼</button>
+      <button class="nav-btn" data-mode="skills"><span class="nav-ico">功</span>功法</button>
+      <button class="nav-btn" data-mode="adventure"><span class="nav-ico">历</span>历练</button>
+      <button class="nav-btn" data-mode="alchemy"><span class="nav-ico">丹</span>炼丹</button>
+    </nav>
+
+    <main id="stage">
+      <canvas id="scene-canvas"></canvas>
+      <div id="scene-ui"></div>
+      <div id="scene-toast"></div>
+    </main>
+
+    <aside id="rightpanel">
+      <section class="rp-box" id="status-box">
+        <h3 class="rp-title">人物状态</h3>
+        <div class="rp-body" id="status-body"></div>
+      </section>
+      <section class="rp-box" id="quest-box">
+        <h3 class="rp-title">仙途历程 <span class="rp-title-sub" id="quest-progress"></span></h3>
+        <div class="rp-body" id="quest-body"></div>
+      </section>
+    </aside>
+  </div>
+
+  <footer id="logbar">
+    <div class="log-head">仙途见闻</div>
+    <div id="log-list"></div>
+  </footer>
+</div>
+
+<!-- 手机端抽屉/弹窗挂载点 -->
+<div id="modal-root"></div>
+<div id="drawer-root"></div>
+
+<!-- 多标签页提示 -->
+<div id="tab-warn" class="hidden">
+  <div class="tab-warn-box">
+    <p>检测到其他标签页正在进行游戏</p>
+    <p class="tab-warn-sub">为保证存档一致，本页已暂停。关闭其他标签页后将自动恢复。</p>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/snd.js"></script>
+<script src="js/save.js"></script>
+<script src="js/game.js"></script>
+<script src="js/sys.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

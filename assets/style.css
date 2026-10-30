@@ -1,0 +1,159 @@
+:root{
+  --bg:#0e1c20;
+  --panel:#13262b;
+  --ink:#f5f0df;
+  --muted:#9badab;
+  --gold:#e1be78;
+  --jade:#97d2ba;
+  --red:#e39882;
+  --line:#ffffff14;
+  --ink-hard:#0c1416;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 500px at 80% -10%, #1b343a 0%, transparent 60%),
+    var(--bg);
+  color:var(--ink);
+  font-family:"Microsoft YaHei",-apple-system,"PingFang SC",Arial,sans-serif;
+  line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+
+/* 顶部条 */
+.topbar{
+  display:flex;align-items:center;gap:18px;
+  padding:16px 28px;
+  border-bottom:3px solid var(--ink-hard);
+  background:linear-gradient(180deg,#15282d,#0f1f23);
+  position:sticky;top:0;z-index:10;
+}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+.logo{
+  width:42px;height:42px;display:grid;place-items:center;
+  background:var(--gold);color:var(--ink-hard);
+  font:bold 22px Georgia,serif;border:3px solid var(--ink-hard);
+  border-radius:10px;transform:rotate(-4deg);
+  box-shadow:4px 4px 0 var(--ink-hard);
+}
+.brand strong{display:block;letter-spacing:3px;font-size:18px}
+.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px}
+.topnav{display:flex;gap:22px;align-items:center;font-size:14px}
+.topnav a{color:var(--muted);transition:color .2s}
+.topnav a:hover{color:var(--gold)}
+.topnav .ghost{
+  border:2px solid var(--line);padding:6px 14px;border-radius:20px;color:var(--jade);
+}
+.topnav .ghost:hover{border-color:var(--jade)}
+
+/* 主视觉 */
+.hero{position:relative;overflow:hidden;padding:70px 28px 90px}
+.hero-mountains{position:absolute;inset:0;width:100%;height:100%}
+.hero-inner{position:relative;max-width:760px;margin:0 auto;text-align:center}
+.bubble{
+  position:relative;display:inline-block;
+  background:var(--ink);color:var(--ink-hard);
+  padding:12px 22px;border-radius:18px;
+  font-weight:700;border:3px solid var(--ink-hard);
+  box-shadow:5px 5px 0 var(--ink-hard);
+  transform:rotate(-2deg);margin-bottom:26px;
+}
+.bubble-tail{
+  position:absolute;left:40px;bottom:-16px;
+  width:0;height:0;border:10px solid transparent;
+  border-top-color:var(--ink-hard);
+}
+.hero h1{
+  font:600 44px/1.3 Georgia,"STSong","SimSun",serif;
+  letter-spacing:4px;margin:0 0 14px;
+  text-shadow:3px 3px 0 var(--ink-hard);
+}
+.hero-sub{color:var(--jade);font-size:15px;margin:0 0 28px}
+.cta{
+  display:inline-block;background:var(--gold);color:var(--ink-hard);
+  font-weight:700;padding:13px 30px;border:3px solid var(--ink-hard);
+  border-radius:30px;box-shadow:5px 5px 0 var(--ink-hard);
+  transition:transform .15s, box-shadow .15s;
+}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink-hard)}
+.cta:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink-hard)}
+
+/* 货架 */
+.shelf{max-width:980px;margin:0 auto;padding:10px 28px 40px}
+.shelf-head{display:flex;align-items:center;gap:14px;margin:10px 0 24px}
+.shelf-head h2{font:400 26px Georgia,serif;letter-spacing:3px;margin:0}
+.shelf-head .count{color:var(--muted);font-size:12px;border:1px solid var(--line);padding:4px 10px;border-radius:20px}
+
+.card{
+  display:grid;grid-template-columns:200px 1fr auto;align-items:center;gap:22px;
+  background:var(--panel);border:3px solid var(--ink-hard);
+  border-radius:16px;padding:20px;margin-bottom:22px;
+  box-shadow:6px 6px 0 #060d0f;
+  transition:transform .18s, box-shadow .18s;
+}
+.card:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 #060d0f}
+.card.pop{animation:pop .22s ease}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.015)}100%{transform:scale(1)}}
+
+.card-art{
+  position:relative;height:130px;border-radius:12px;
+  display:grid;place-items:center;overflow:hidden;
+  border:3px solid var(--ink-hard);
+}
+.card-art.shanhai{background:linear-gradient(150deg,#2a454a,#172e34)}
+.card-art.qingyun{background:linear-gradient(150deg,#324a52,#15252b)}
+.art-emoji{font:bold 56px Georgia,serif;color:var(--gold);text-shadow:3px 3px 0 var(--ink-hard)}
+.ribbon{
+  position:absolute;top:10px;left:-30px;transform:rotate(-45deg);
+  background:var(--red);color:var(--ink-hard);font-size:10px;font-weight:700;
+  padding:3px 36px;border:2px solid var(--ink-hard);
+}
+.card-body h3{margin:0;font:400 24px Georgia,serif;letter-spacing:2px}
+.tagline{color:var(--gold);font-size:13px;margin:4px 0 8px}
+.desc{color:var(--muted);font-size:13px;margin:0 0 12px;max-width:520px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tags span{
+  font-size:11px;color:var(--jade);border:1px solid #97d2ba40;
+  padding:3px 10px;border-radius:20px;background:#97d2ba12;
+}
+.play-btn{
+  align-self:center;justify-self:end;
+  background:var(--jade);color:var(--ink-hard);font-weight:700;
+  padding:14px 22px;border:3px solid var(--ink-hard);border-radius:12px;
+  box-shadow:4px 4px 0 var(--ink-hard);white-space:nowrap;
+  transition:transform .15s, box-shadow .15s;
+}
+.play-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink-hard)}
+.play-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink-hard)}
+
+/* 关于 */
+.about{max-width:980px;margin:0 auto;padding:20px 28px 50px}
+.about h2{font:400 24px Georgia,serif;letter-spacing:3px;margin:0 0 14px}
+.about p{color:var(--muted);font-size:14px;max-width:680px}
+.about b{color:var(--ink)}
+.about .hint{
+  border:1px solid var(--line);background:#ffffff08;
+  padding:14px 16px;border-radius:12px;font-size:13px;
+}
+.about code{background:var(--ink-hard);color:var(--gold);padding:2px 7px;border-radius:5px;font-size:12px}
+
+/* 页脚 */
+.footer{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  border-top:3px solid var(--ink-hard);padding:20px 28px;
+  color:var(--muted);font-size:12px;flex-wrap:wrap;
+}
+.footer a{color:var(--jade)}
+.footer a:hover{text-decoration:underline}
+
+/* 移动端 */
+@media(max-width:720px){
+  .hero h1{font-size:32px}
+  .card{grid-template-columns:1fr;gap:14px;text-align:center}
+  .card-art{height:110px}
+  .play-btn{justify-self:stretch;text-align:center}
+  .ribbon{left:-32px}
+  .tags{justify-content:center}
+}
